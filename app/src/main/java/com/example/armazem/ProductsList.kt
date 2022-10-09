@@ -1,0 +1,53 @@
+package com.example.armazem
+
+class ProductsList {
+  private var productsHash = HashMap<String, String>()
+
+  constructor() {
+    this.productsHash.put("7894900010015", "A:1:1:REFRIGERANTE COCA-COLA LATA 350ML:1000")
+    this.productsHash.put("7894900011517", "A:1:2:REFRIGERANTE COCA-COLA GARRAFA 2L:1000")
+    this.productsHash.put(
+      "7891991000833",
+      "A:1:3:REFRIGERANTE SODA LIMONADA ANTARTIC LATA 350ML:1000"
+    )
+    this.productsHash.put("7891991011020", "A:2:1:REFRIGERANTE GUARANA ANTARCTICA LATA 350ML:1000")
+    this.productsHash.put("7898712836870", "A:2:2:REFRIGERANTE GUARANA ANTARCTICA 2L:1000")
+    this.productsHash.put("7894900039924", "A:2:3:REFRIGERANTE FANTA LARANJA 2L:1000")
+    this.productsHash.put("7894900031201", "A:2:4:REFRIGERANTE FANTA LARANJA LATA 350ML:1000")
+    this.productsHash.put("7892840800079", "A:3:1:REFRIGERANTE PEPSI LATA 350ML:1000")
+    this.productsHash.put("7892840813017", "A:3:2:REFRIGERANTE PEPSI 2L:1000")
+    this.productsHash.put("7896004000855", "B:1:1:SUCRILHOS KELLOGG'S ORIGINAL 250G:1000")
+    this.productsHash.put("7896004003979", "B:1:2:SUCRILHOS KELLOGG'S CHOCOLATE 320G:1000")
+    this.productsHash.put(
+      "7896110005140",
+      "B:2:1:PAPEL HIGIÊNICO PERSONAL FOLHA SIMPLES NEUTRO 60 METROS 4 UNIDADES:1000"
+    )
+    this.productsHash.put("7896104998953", "B:2:2:PAPEL HIGIÊNICO MILI 4R:1000")
+    this.productsHash.put("7896076002146", "B:2:3:PAPEL HIGIENICO DAMA 60MTR:1000")
+    this.productsHash.put("7896276060021", "C:1:1:ARROZ AGULHINHA ARROZAL T1 5KG:1000")
+    this.productsHash.put("7898295150189", "C:1:2:ARROZ SABOROSO 5KG:1000")
+    this.productsHash.put("7896086423030", "C:1:3:ARROZ TRIMAIS 5KG:1000")
+    this.productsHash.put("7896864400192", "C:2:1:FEIJAO PICININ 1KG:1000")
+    this.productsHash.put("7897924800877", "C:2:2:FEIJAO PRETO VENEZA 1KG:1000")
+    this.productsHash.put("7898084090030", "C:2:3:FEIJÃO PEREIRA CARIOQUINHA 1KG:1000")
+    this.productsHash.put("7891959004415", "D:1:1:AÇUCAR REFINADO DOÇULA 1KG:1000")
+    this.productsHash.put("7896032501010", "D:1:2:AÇÚCAR REFINADO DA BARRA 1KG:1000")
+    this.productsHash.put("7896109801005", "D:1:3:AÇÚCAR REFINADO ESPECIAL GUARANI 1KG:1000")
+    this.productsHash.put("7896319420546", "D:2:1:ACUCAR REFINADO CLARION 1KG:1000")
+    this.productsHash.put(
+      "7896089028935",
+      "D:2:2:CAFÉ TORRADO MOÍDO POUCHE CAFÉ DO PONTO 500G:1000"
+    )
+    this.productsHash.put("7898286200077", "D:2:3:CAFE MARATA 500G:1000")
+    this.productsHash.put("7891910010905", "D:3:1:CAFE CABOCLO 500G:1000")
+    this.productsHash.put("7898079250012", "D:3:2:CAFE FIORENZA 500G:1000")
+    this.productsHash.put("7891107000504", "E:1:1:OLEO DE SOJA SOYA 1L:1000")
+    this.productsHash.put("7896334200550", "E:2:1:OLEO DE SOJA GRANOL 1L:1000")
+    this.productsHash.put("7896036090107", "E:3:1:OLEO DE SOJA VELEIRO 1L:1000")
+  }
+
+  fun getProduts(): HashMap<String, String> {
+    return productsHash
+  }
+
+}

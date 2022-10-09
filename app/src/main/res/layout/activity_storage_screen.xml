@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:paddingHorizontal="25dp"
+  android:scrollbars="none"
+  tools:context=".StorageScreenActivity">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+      android:id="@+id/textView3"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="50dp"
+      android:layout_marginBottom="50dp"
+      android:fontFamily="@font/inter_medium"
+      android:text="OS PRODUTOS QUE TEMOS NO ARMAZEM SAO:"
+      android:textAlignment="center"
+      android:textColor="@color/black"
+      android:textStyle="bold"
+      android:textSize="17sp"
+      app:layout_constraintBottom_toTopOf="@+id/scroll_horizontal"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.0" />
+
+    <HorizontalScrollView
+      android:id="@+id/scroll_horizontal"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:ignore="MissingConstraints">
+
+      <TableLayout
+        android:id="@+id/tabela_produtos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F0F0F0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:paddingVertical="12dp"
+          android:paddingStart="11dp">
+
+          <TextView
+            android:layout_width="245dp"
+            android:maxWidth="245dp"
+            android:fontFamily="@font/inter_medium"
+            android:text="Produto"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+          <TextView
+            android:layout_width="100dp"
+            android:maxWidth="100dp"
+            android:fontFamily="@font/inter_medium"
+            android:text="Quantidade"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+        </TableRow>
+
+      </TableLayout>
+
+    </HorizontalScrollView>
+
+    <Button
+      android:id="@+id/voltar"
+      android:layout_width="300dp"
+      android:layout_height="60dp"
+      android:backgroundTint="@color/black"
+      android:fontFamily="@font/inter_medium"
+      android:text="Voltar"
+      android:textAllCaps="false"
+      android:textColor="@color/white"
+      android:textSize="16sp"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.491"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/scroll_horizontal"
+      app:layout_constraintVertical_bias="0.448" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+

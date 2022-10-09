@@ -1,0 +1,20 @@
+<resources>
+  <string name="app_name">Armazem</string>
+  <string name="logo">Logo do aplicativo (QRcode)</string>
+  <string name="nome_curso">Programação Para Dispositivos Móveis</string>
+  <string name="nome_universidade">Universidade Cidade de São Paulo</string>
+  <string name="username_input">Digite o seu usuário</string>
+  <string name="password_input">Digite a sua senha</string>
+  <string name="botao_entrar">Entrar</string>
+  <string name="botao_comecar">Começar</string>
+  <string name="botao_estoque">Ver Estoque</string>
+  <string name="boas_vindas">Bem vindo</string>
+  <string name="buscar_produtos">Buscar Produtos</string>
+  <string name="scanner">Scanner</string>
+  <string name="continuar">Continuar</string>
+  <string name="fim_separacao">Fim da Separação\n\nOs produtos separados foram:</string>
+  <string name="nova_separacao">Nova Separação</string>
+  <string name="tela_inicial">Tela Inicial</string>
+  <string name="introducao_separacao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porta dictum suscipit. Nullam eu mauris erat. Sed sit amet ligula.</string>
+  <string name="introducao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tortor enim, faucibus non elit a, congue feugiat ipsum. Aliquam vel nisi et mi ornare aliquam sed vel arcu. Vivamus eget.</string>
+</resources>
