@@ -15,12 +15,12 @@
 
     <TextView
       android:id="@+id/textView3"
-      android:layout_width="wrap_content"
+      android:layout_width="300dp"
       android:layout_height="wrap_content"
       android:layout_marginTop="50dp"
       android:layout_marginBottom="50dp"
       android:fontFamily="@font/inter_medium"
-      android:text="OS PRODUTOS QUE TEMOS NO ARMAZEM SAO:"
+      android:text="@string/storage"
       android:textAlignment="center"
       android:textColor="@color/black"
       android:textStyle="bold"
@@ -44,7 +44,7 @@
 
       <TableLayout
         android:id="@+id/tabela_produtos"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:background="#F0F0F0"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -71,7 +71,7 @@
             android:layout_width="100dp"
             android:maxWidth="100dp"
             android:fontFamily="@font/inter_medium"
-            android:text="Quantidade"
+            android:text="Estoque"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="16sp"
