@@ -3,11 +3,13 @@ package com.example.armazem
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.SurfaceHolder
 import android.view.SurfaceView
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -24,6 +26,12 @@ class SeparationScreenActivity : AppCompatActivity() {
 
   private var contexto: AppCompatActivity = this
 
+  private var flag = 0
+  private val params = Bundle()
+  private lateinit var status: TextView
+  private lateinit var botao: Button
+  private lateinit var produtos: HashMap<String, String>
+
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_separation_screen)
@@ -31,6 +39,13 @@ class SeparationScreenActivity : AppCompatActivity() {
     println("#### INÍCIO SEPARATION ####")
 
     val paramsHome = intent.extras
+    botao = findViewById(R.id.buscar_produtos)
+    status = findViewById(R.id.status_scanner)
+    produtos = paramsHome!!.getSerializable("Products") as HashMap<String, String>
+
+    status.visibility = TextView.INVISIBLE
+    botao.visibility = Button.INVISIBLE
+    flag = 0
 
     if (ContextCompat.checkSelfPermission(
         contexto, android.Manifest.permission.CAMERA
@@ -41,15 +56,14 @@ class SeparationScreenActivity : AppCompatActivity() {
       setupControls()
     }
 
-    val botao: Button = findViewById(R.id.buscar_produtos)
-
     botao.setOnClickListener {
-      val params = Bundle()
       params.putAll(paramsHome)
 
       val proximaTela = Intent(this, SearchScreenActivity::class.java)
       proximaTela.putExtras(params)
       startActivity(proximaTela)
+
+      finish()
     }
   }
 
@@ -94,7 +108,6 @@ class SeparationScreenActivity : AppCompatActivity() {
       }
     })
 
-
     barcodeDetector.setProcessor(object : Detector.Processor<Barcode> {
       override fun release() {
         Toast.makeText(contexto, "Scanner has been closed", Toast.LENGTH_SHORT)
@@ -110,26 +123,48 @@ class SeparationScreenActivity : AppCompatActivity() {
           runOnUiThread {
 //        cameraSource.stop()
 
-            if (scannedValue == "7896319420546") {
-              Toast.makeText(contexto, "RUA ENCONTRADA", Toast.LENGTH_SHORT)
-                .show()
+            if (scannedValue.contains(":") && flag == 0) {
+              flag = 1
+              //Pausa a câmera
               cameraSource.stop()
-            }
 
-            Toast.makeText(
-              contexto,
-              "value- $scannedValue",
-              Toast.LENGTH_SHORT
-            ).show()
-//            finish()
+              val separacao = scannedValue.split("|")
+              val separacaoHash = HashMap<String, HashMap<String, String>>()
+              val ds = HashMap<String, String>()
+
+              status.text = "Separação de produtos identificada!!!"
+              status.setTextColor(Color.parseColor("#35BD20"))
+              status.visibility = TextView.VISIBLE
+              botao.visibility = Button.VISIBLE
+
+              for (x in separacao) {
+                val valores = x.split(":")
+                val localizacao = produtos[valores[0]].toString().split(":")
+
+                ds.put("RUA", localizacao[0].toString())
+                ds.put("NUMERO", localizacao[1].toString())
+                ds.put("ANDAR", localizacao[2].toString())
+                ds.put("QUANTIDADE", valores[1].toString())
+                ds.put("PRODUTO", localizacao[3].toString())
+
+                separacaoHash[valores[0]] = ds;
+              }
+              params.putSerializable("Separation", separacaoHash)
+
+            } else if (flag == 0) {
+              status.text = "Separação não idenficada!!!\nEscaneie novamente..."
+              status.setTextColor(Color.parseColor("#C72020"))
+              status.visibility = TextView.VISIBLE
+            }
           }
-        } else {
-          Toast.makeText(
-            contexto,
-            "Qrcode não identificado",
-            Toast.LENGTH_SHORT
-          ).show()
         }
+//        else {
+//          Toast.makeText(
+//            contexto,
+//            "Qrcode não identificado",
+//            Toast.LENGTH_SHORT
+//          ).show()
+//        }
       }
     })
   }

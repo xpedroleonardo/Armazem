@@ -14,7 +14,7 @@ class LoginScreenActivity : AppCompatActivity() {
     println("#### INÍCIO LOGIN ####")
 
     val paramsSplash = intent.extras
-    val usersHash = paramsSplash!!.getSerializable("Users") as HashMap<String, String>
+    val usersHash = paramsSplash!!.getSerializable("Users") as HashMap<*, *>
 
     val botaoEntrar: Button = findViewById(R.id.botao_entrar)
 
@@ -25,16 +25,18 @@ class LoginScreenActivity : AppCompatActivity() {
       if (username.text.isEmpty() || password.text.isEmpty()) {
         Toast.makeText(this, "Digite Usuário e Senha", Toast.LENGTH_SHORT).show()
       } else {
-        if (usersHash[username.text.toString()].toString() == password.text.toString()) {
-          Toast.makeText(this, "Login realizado com sucesso!!!", Toast.LENGTH_SHORT).show()
 
-          var params = Bundle()
+        val usernameValid = username.text.toString().replace("\\s".toRegex(), "")
+        val passwordValid = password.text.toString().replace("\\s".toRegex(), "")
+
+        if (usersHash[usernameValid].toString() == passwordValid) {
+          val params = Bundle()
           params.putAll(paramsSplash)
           val proximaTela = Intent(this, HomeScreenActivity::class.java)
           proximaTela.putExtras(params)
           startActivity(proximaTela)
-//
-//          finish()
+
+          finish()
         } else {
           Toast.makeText(this, "Usuário/Senha incorretos!!!", Toast.LENGTH_SHORT).show()
         }

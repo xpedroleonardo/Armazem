@@ -13,10 +13,10 @@ class HomeScreenActivity : AppCompatActivity() {
     println("#### INÍCIO HOME ####")
 
     val paramsLogin = intent.extras
-    var comecar: Button = findViewById(R.id.comecar)
-    var estoque: Button = findViewById(R.id.estoque)
+    val comecar: Button = findViewById(R.id.comecar)
+    val estoque: Button = findViewById(R.id.estoque)
 
-    var params = Bundle()
+    val params = Bundle()
     params.putAll(paramsLogin)
 
     comecar.setOnClickListener {
@@ -30,7 +30,6 @@ class HomeScreenActivity : AppCompatActivity() {
       proximaTela.putExtras(params)
       startActivity(proximaTela)
     }
-
 
   }
 }
