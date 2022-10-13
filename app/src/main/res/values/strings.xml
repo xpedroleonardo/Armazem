@@ -15,6 +15,7 @@
   <string name="fim_separacao">Fim da Separação\n\nOs produtos separados foram:</string>
   <string name="nova_separacao">Nova Separação</string>
   <string name="tela_inicial">Tela Inicial</string>
+  <string name="escaneie">Escaneie o Qrcode</string>
   <string name="introducao_separacao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porta dictum suscipit. Nullam eu mauris erat. Sed sit amet ligula.</string>
   <string name="storage">Esses são os produtos que estão em nosso estoque, e a sua quantidade em estoque</string>
   <string name="introducao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tortor enim, faucibus non elit a, congue feugiat ipsum. Aliquam vel nisi et mi ornare aliquam sed vel arcu. Vivamus eget.</string>

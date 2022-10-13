@@ -43,7 +43,6 @@ class SeparationScreenActivity : AppCompatActivity() {
     status = findViewById(R.id.status_scanner)
     produtos = paramsHome!!.getSerializable("Products") as HashMap<String, String>
 
-    status.visibility = TextView.INVISIBLE
     botao.visibility = Button.INVISIBLE
     flag = 0
 
@@ -128,43 +127,35 @@ class SeparationScreenActivity : AppCompatActivity() {
               //Pausa a câmera
               cameraSource.stop()
 
-              val separacao = scannedValue.split("|")
-              val separacaoHash = HashMap<String, HashMap<String, String>>()
-              val ds = HashMap<String, String>()
-
               status.text = "Separação de produtos identificada!!!"
               status.setTextColor(Color.parseColor("#35BD20"))
-              status.visibility = TextView.VISIBLE
               botao.visibility = Button.VISIBLE
+
+              val separacao = scannedValue.split("|")
+              val separacaoHash = HashMap<String, HashMap<String, String>>()
 
               for (x in separacao) {
                 val valores = x.split(":")
                 val localizacao = produtos[valores[0]].toString().split(":")
 
-                ds.put("RUA", localizacao[0].toString())
-                ds.put("NUMERO", localizacao[1].toString())
-                ds.put("ANDAR", localizacao[2].toString())
-                ds.put("QUANTIDADE", valores[1].toString())
-                ds.put("PRODUTO", localizacao[3].toString())
+                val detalhes = HashMap<String, String>()
+                detalhes.put("RUA", localizacao[0])
+                detalhes.put("NUMERO", localizacao[1])
+                detalhes.put("ANDAR", localizacao[2])
+                detalhes.put("QUANTIDADE", valores[1])
+                detalhes.put("PRODUTO", localizacao[3])
 
-                separacaoHash[valores[0]] = ds;
+                separacaoHash[valores[0]] = detalhes
               }
+              
               params.putSerializable("Separation", separacaoHash)
 
             } else if (flag == 0) {
               status.text = "Separação não idenficada!!!\nEscaneie novamente..."
               status.setTextColor(Color.parseColor("#C72020"))
-              status.visibility = TextView.VISIBLE
             }
           }
         }
-//        else {
-//          Toast.makeText(
-//            contexto,
-//            "Qrcode não identificado",
-//            Toast.LENGTH_SHORT
-//          ).show()
-//        }
       }
     })
   }
@@ -187,7 +178,7 @@ class SeparationScreenActivity : AppCompatActivity() {
       if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
         setupControls()
       } else {
-        Toast.makeText(applicationContext, "Permission Denied", Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, "Permissão Negada!", Toast.LENGTH_SHORT).show()
       }
     }
   }

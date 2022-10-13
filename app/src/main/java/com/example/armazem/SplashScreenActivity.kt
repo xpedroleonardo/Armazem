@@ -1,11 +1,9 @@
 package com.example.armazem
 
 import android.content.Intent
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.preference.PreferenceManager
 
 class SplashScreenActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +20,7 @@ class SplashScreenActivity : AppCompatActivity() {
     val usuariosHash = usuarios.getUsers()
 
     Handler().postDelayed({
-      var params = Bundle()
+      val params = Bundle()
       params.putSerializable("Products", produtosHash)
       params.putSerializable("Users", usuariosHash)
 
@@ -31,6 +29,6 @@ class SplashScreenActivity : AppCompatActivity() {
       startActivity(novaTela)
 
       finish()
-    }, 5000)
+    }, 1000)
   }
 }

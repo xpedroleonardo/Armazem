@@ -20,12 +20,20 @@ class InventoryScreenActivity : AppCompatActivity() {
     val paramsSearch = intent.extras
     val productsHash =
       paramsSearch!!.getSerializable("Products") as HashMap<String, String>
-    var telaInicial: Button = findViewById(R.id.tela_inicial)
-    var novaSeparacao: Button = findViewById(R.id.nova_separacao)
-    val novoHash = exibirProdutos(productsHash)
+
+    val separationHash =
+      paramsSearch.getSerializable("remove") as HashMap<String, String>
+
+    for (x in separationHash.keys) {
+      println("CHAVE $x - VALOR: ${separationHash[x]}")
+    }
+
+    val telaInicial: Button = findViewById(R.id.tela_inicial)
+    val novaSeparacao: Button = findViewById(R.id.nova_separacao)
+    val novoHash = exibirProdutos(separationHash, productsHash)
 
     novaSeparacao.setOnClickListener {
-      var params = Bundle()
+      val params = Bundle()
       params.putSerializable("Products", novoHash)
 
       val proximaTela = Intent(this, SeparationScreenActivity::class.java)
@@ -34,7 +42,7 @@ class InventoryScreenActivity : AppCompatActivity() {
     }
 
     telaInicial.setOnClickListener {
-      var params = Bundle()
+      val params = Bundle()
       params.putSerializable("Products", novoHash)
 
       val proximaTela = Intent(this, HomeScreenActivity::class.java)
@@ -43,70 +51,77 @@ class InventoryScreenActivity : AppCompatActivity() {
     }
   }
 
-  fun exibirProdutos(produtosSeparacao: HashMap<String, String>): HashMap<String, String> {
-    var tabela: TableLayout = findViewById(R.id.tabela_produtos)
-    var products = ProductsList()
+  fun exibirProdutos(
+    separacao: HashMap<String, String>,
+    todos: HashMap<String, String>
+  ): HashMap<String, String> {
+    val tabela: TableLayout = findViewById(R.id.tabela_produtos)
+    val novoHash = HashMap<String, String>()
 
-    var novoHash = HashMap<String, String>()
+    for (x in todos.keys) {
+      if (separacao.containsKey(x)) {
+        val dados = separacao[x]?.split(":")
+        val valorTotal = todos[x]?.split(":")
 
-    for (x in produtosSeparacao.keys) {
-      var dados = produtosSeparacao[x]?.split(":")
+        val linha = TableRow(this)
+        val separador = View(this)
+        val typeFace: Typeface? = ResourcesCompat.getFont(this, R.font.inter)
 
-      var linha = TableRow(this)
-      var separador = View(this)
-      var typeFace: Typeface? = ResourcesCompat.getFont(this, R.font.inter)
+        val separadorLayout =
+          TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, 3)
+        separador.setLayoutParams(separadorLayout)
+        separador.setBackgroundColor(Color.parseColor("#CECECE"))
 
-      val separadorLayout =
-        TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, 3)
-      separador.setLayoutParams(separadorLayout)
-      separador.setBackgroundColor(Color.parseColor("#CECECE"));
+        val linhaLayout =
+          TableRow.LayoutParams(
+            TableRow.LayoutParams.MATCH_PARENT,
+            TableRow.LayoutParams.MATCH_PARENT
+          )
+        linha.setLayoutParams(linhaLayout)
+        linha.setPadding(27, 27, 0, 27)
 
-      val linhaLayout =
-        TableRow.LayoutParams(
-          TableRow.LayoutParams.MATCH_PARENT,
-          TableRow.LayoutParams.MATCH_PARENT
-        )
-      linha.setLayoutParams(linhaLayout)
-      linha.setPadding(27, 27, 0, 27)
+        val listaProduto = TextView(this)
+        listaProduto.width = 150
+        listaProduto.text = "${dados?.get(3)}"
+        listaProduto.setTypeface(typeFace)
+        listaProduto.setTextColor(Color.BLACK)
+        linha.addView(listaProduto)
 
-      var listaProduto: TextView = TextView(this)
-      listaProduto.width = 150
-      listaProduto.text = "${dados?.get(3)}"
-      listaProduto.setTypeface(typeFace)
-      listaProduto.setTextColor(Color.BLACK)
-      linha.addView(listaProduto)
+        val listaEAN = TextView(this)
+        listaEAN.width = 90
+        listaEAN.text = x
+        listaEAN.textAlignment = View.TEXT_ALIGNMENT_CENTER
+        listaEAN.setTypeface(typeFace)
+        listaEAN.setTextColor(Color.BLACK)
+        linha.addView(listaEAN)
 
-      var listaEAN: TextView = TextView(this)
-      listaEAN.width = 90
-      listaEAN.text = "$x"
-      listaEAN.textAlignment = View.TEXT_ALIGNMENT_CENTER
-      listaEAN.setTypeface(typeFace)
-      listaEAN.setTextColor(Color.BLACK)
-      linha.addView(listaEAN)
+        val listaSeparado = TextView(this)
+        listaSeparado.width = 150
+        listaSeparado.text = "${dados?.get(4)}"
+        listaSeparado.textAlignment = View.TEXT_ALIGNMENT_CENTER
+        listaSeparado.setTypeface(typeFace)
+        listaSeparado.setTextColor(Color.BLACK)
+        linha.addView(listaSeparado)
 
-      var listaSeparado: TextView = TextView(this)
-      listaSeparado.width = 150
-      listaSeparado.text = "10"
-      listaSeparado.textAlignment = View.TEXT_ALIGNMENT_CENTER
-      listaSeparado.setTypeface(typeFace)
-      listaSeparado.setTextColor(Color.BLACK)
-      linha.addView(listaSeparado)
+        val listaEstoque = TextView(this)
+        listaEstoque.width = 150
+        listaEstoque.text =
+          (Integer.parseInt(valorTotal?.get(4)) - Integer.parseInt(dados?.get(4))).toString()
+        listaEstoque.textAlignment = View.TEXT_ALIGNMENT_CENTER
+        listaEstoque.setTypeface(typeFace)
+        listaEstoque.setTextColor(Color.BLACK)
+        linha.addView(listaEstoque)
 
-      var listaEstoque: TextView = TextView(this)
-      listaEstoque.width = 150
-      listaEstoque.text = (Integer.parseInt(dados?.get(4)) - 10).toString()
-      listaEstoque.textAlignment = View.TEXT_ALIGNMENT_CENTER
-      listaEstoque.setTypeface(typeFace)
-      listaEstoque.setTextColor(Color.BLACK)
-      linha.addView(listaEstoque)
+        tabela.addView(separador)
+        tabela.addView(linha)
 
-      tabela.addView(separador)
-      tabela.addView(linha)
-
-      var junta = "${dados?.get(0)}:${dados?.get(1)}:${dados?.get(2)}:${dados?.get(3)}:${
-        (Integer.parseInt(dados?.get(4)) - 10)
-      }"
-      novoHash.put(x, junta)
+        val junta = "${dados?.get(0)}:${dados?.get(1)}:${dados?.get(2)}:${dados?.get(3)}:${
+          (listaEstoque.text)
+        }"
+        novoHash[x] = junta
+      } else {
+        novoHash[x] = "${todos[x]}"
+      }
     }
 
     return novoHash
