@@ -86,7 +86,7 @@
 
     <Button
       android:id="@+id/voltar"
-      android:layout_width="300dp"
+      android:layout_width="320dp"
       android:layout_height="60dp"
       android:backgroundTint="@color/black"
       android:fontFamily="@font/inter_medium"

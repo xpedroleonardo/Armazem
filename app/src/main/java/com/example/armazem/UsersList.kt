@@ -4,16 +4,16 @@ class UsersList {
   private var usersHash = HashMap<String, String>()
 
   constructor() {
-    this.usersHash.put("Camille", "12345")
-    this.usersHash.put("Keila", "12345")
-    this.usersHash.put("Heloisa", "12345")
-    this.usersHash.put("Kethellen", "12345")
-    this.usersHash.put("Luana", "12345")
-    this.usersHash.put("Lucas", "12345")
-    this.usersHash.put("MateusFerreira", "12345")
-    this.usersHash.put("MatheusMasuda", "12345")
-    this.usersHash.put("Pedro", "12345")
-    this.usersHash.put("Renan", "12345")
+    this.usersHash["Camille"] = "12345"
+    this.usersHash["Keila"] = "12345"
+    this.usersHash["Heloisa"] = "12345"
+    this.usersHash["Kethellen"] = "12345"
+    this.usersHash["Luana"] = "12345"
+    this.usersHash["Lucas"] = "12345"
+    this.usersHash["MateusFerreira"] = "12345"
+    this.usersHash["MatheusMasuda"] = "12345"
+    this.usersHash["Pedro"] = "12345"
+    this.usersHash["Renan"] = "12345"
   }
 
   fun getUsers(): HashMap<String, String> {

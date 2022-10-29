@@ -118,10 +118,7 @@ class SeparationScreenActivity : AppCompatActivity() {
         if (barcodes.size() == 1) {
           val scannedValue = barcodes.valueAt(0).rawValue
 
-          //Don't forget to add this line printing value or finishing activity must run on main thread
           runOnUiThread {
-//        cameraSource.stop()
-
             if (scannedValue.contains(":") && flag == 0) {
               flag = 1
               //Pausa a câmera
@@ -139,15 +136,14 @@ class SeparationScreenActivity : AppCompatActivity() {
                 val localizacao = produtos[valores[0]].toString().split(":")
 
                 val detalhes = HashMap<String, String>()
-                detalhes.put("RUA", localizacao[0])
-                detalhes.put("NUMERO", localizacao[1])
-                detalhes.put("ANDAR", localizacao[2])
-                detalhes.put("QUANTIDADE", valores[1])
-                detalhes.put("PRODUTO", localizacao[3])
+                detalhes["RUA"] = localizacao[0]
+                detalhes["NUMERO"] = localizacao[1]
+                detalhes["ANDAR"] = localizacao[2]
+                detalhes["QUANTIDADE"] = valores[1]
+                detalhes["PRODUTO"] = localizacao[3]
 
                 separacaoHash[valores[0]] = detalhes
               }
-              
               params.putSerializable("Separation", separacaoHash)
 
             } else if (flag == 0) {

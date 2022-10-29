@@ -8,7 +8,7 @@
   <string name="botao_entrar">Entrar</string>
   <string name="botao_comecar">Começar</string>
   <string name="botao_estoque">Ver Estoque</string>
-  <string name="boas_vindas">Bem vindo</string>
+  <string name="boas_vindas">Seja Bem Vindo!</string>
   <string name="buscar_produtos">Buscar Produtos</string>
   <string name="scanner">Scanner</string>
   <string name="continuar">Continuar</string>
@@ -16,7 +16,7 @@
   <string name="nova_separacao">Nova Separação</string>
   <string name="tela_inicial">Tela Inicial</string>
   <string name="escaneie">Escaneie o Qrcode</string>
-  <string name="introducao_separacao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porta dictum suscipit. Nullam eu mauris erat. Sed sit amet ligula.</string>
+  <string name="introducao_separacao">Escaneie o QR Code de sua lista para começarmos a busca de seus produtos no Estoque.</string>
   <string name="storage">Esses são os produtos que estão em nosso estoque, e a sua quantidade em estoque</string>
-  <string name="introducao">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin tortor enim, faucibus non elit a, congue feugiat ipsum. Aliquam vel nisi et mi ornare aliquam sed vel arcu. Vivamus eget.</string>
+  <string name="introducao">Nesse Aplicativo temos o objetivo de facilitar sua listagem de produtos e contagem total deles em estoque.</string>
 </resources>

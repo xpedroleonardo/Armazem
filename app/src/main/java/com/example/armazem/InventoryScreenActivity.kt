@@ -22,11 +22,7 @@ class InventoryScreenActivity : AppCompatActivity() {
       paramsSearch!!.getSerializable("Products") as HashMap<String, String>
 
     val separationHash =
-      paramsSearch.getSerializable("remove") as HashMap<String, String>
-
-    for (x in separationHash.keys) {
-      println("CHAVE $x - VALOR: ${separationHash[x]}")
-    }
+      paramsSearch.getSerializable("Remove") as HashMap<String, String>
 
     val telaInicial: Button = findViewById(R.id.tela_inicial)
     val novaSeparacao: Button = findViewById(R.id.nova_separacao)

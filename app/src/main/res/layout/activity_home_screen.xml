@@ -52,7 +52,7 @@
 
   <Button
     android:id="@+id/comecar"
-    android:layout_width="300dp"
+    android:layout_width="320dp"
     android:layout_height="60dp"
     android:backgroundTint="@color/black"
     android:text="@string/botao_comecar"
@@ -70,7 +70,7 @@
 
   <Button
     android:id="@+id/estoque"
-    android:layout_width="300dp"
+    android:layout_width="320dp"
     android:layout_height="60dp"
     android:backgroundTint="@color/black"
     android:text="@string/botao_estoque"

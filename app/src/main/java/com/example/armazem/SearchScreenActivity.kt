@@ -98,13 +98,11 @@ class SearchScreenActivity : AppCompatActivity() {
     }
 
     for (x in separacaoAtual.keys) {
-      println("CHAVES: $x - VALORES: ${separacaoAtual[x]}")
-
       val values = separacaoAtual[x] as HashMap<String, String>
       val junta =
         "${values["RUA"].toString()}:${values["NUMERO"].toString()}:${values["ANDAR"].toString()}:${values["PRODUTO"].toString()}:${values["QUANTIDADE"].toString()}"
 
-      separacao.put(x, junta)
+      separacao[x] = junta
     }
 
     Toast.makeText(this, "Quantidade de Produtos: $QUANTIDADEPRODUTOS", Toast.LENGTH_LONG).show()
@@ -174,7 +172,7 @@ class SearchScreenActivity : AppCompatActivity() {
         val params = Bundle()
 
         params.putAll(paramsSeparation)
-        params.putSerializable("remove", separacao)
+        params.putSerializable("Remove", separacao)
 
         val proximaTela = Intent(this, InventoryScreenActivity::class.java)
         proximaTela.putExtras(params)
