@@ -70,6 +70,14 @@ class StorageScreenActivity : AppCompatActivity() {
       listaProduto.setTextColor(Color.BLACK)
       linha.addView(listaProduto)
 
+      val listaEAN = TextView(this)
+      listaEAN.width = 90
+      listaEAN.text = x
+      listaEAN.textAlignment = View.TEXT_ALIGNMENT_CENTER
+      listaEAN.setTypeface(typeFace)
+      listaEAN.setTextColor(Color.BLACK)
+      linha.addView(listaEAN)
+
       var listaQuantidade: TextView = TextView(this)
       listaQuantidade.width = 150
       listaQuantidade.text = "${dados?.get(4)}"
