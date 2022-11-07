@@ -92,7 +92,7 @@ class SearchScreenActivity : AppCompatActivity() {
         statusProcura.setTextColor(Color.parseColor("#000000"))
       }
 
-      if (separacaoAtual.keys.size == 0) {
+      if (separacaoAtual.keys.size == 1) {
         ULTIMO = true
       }
     }
@@ -131,9 +131,10 @@ class SearchScreenActivity : AppCompatActivity() {
           }
         }
 
-        if (separacaoAtual.size == 1) {
+        if (separacaoAtual.keys.size == 1) {
           ULTIMO = true
         }
+
         botao.visibility = Button.INVISIBLE
         cameraSource.start(leitorQrcode)
       } else if (proximaLocalizacao == "NUMERO" && flag == 1) {
@@ -271,7 +272,6 @@ class SearchScreenActivity : AppCompatActivity() {
             } else if (scannedValue == EAN && proximaLocalizacao == "ESCANEAR" && flagQrcode) {
               flagQrcode = false
               QUANTIDADE--
-
 
               if (QUANTIDADE == 0 && ULTIMO) {
                 statusProcura.text = "Separação Finalizada!\nIndo para o relatório da separação"

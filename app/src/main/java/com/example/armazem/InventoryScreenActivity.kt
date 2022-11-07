@@ -35,6 +35,7 @@ class InventoryScreenActivity : AppCompatActivity() {
       val proximaTela = Intent(this, SeparationScreenActivity::class.java)
       proximaTela.putExtras(params)
       startActivity(proximaTela)
+      finish()
     }
 
     telaInicial.setOnClickListener {
@@ -44,6 +45,7 @@ class InventoryScreenActivity : AppCompatActivity() {
       val proximaTela = Intent(this, HomeScreenActivity::class.java)
       proximaTela.putExtras(params)
       startActivity(proximaTela)
+      finish()
     }
   }
 

@@ -7,14 +7,14 @@
         <entry key="app/src/main/res/drawable/ic_logo.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/ic_scan.xml" value="0.197" />
         <entry key="app/src/main/res/drawable/round_borders.xml" value="0.2835" />
-        <entry key="app/src/main/res/layout/activity_home_screen.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_home_screen.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_inventory_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login_screen.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2769100886449979" />
         <entry key="app/src/main/res/layout/activity_search_screen.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_separation_screen.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/activity_storage_screen.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_storage_screen.xml" value="0.33" />
       </map>
     </option>
   </component>

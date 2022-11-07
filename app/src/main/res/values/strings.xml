@@ -16,7 +16,7 @@
   <string name="nova_separacao">Nova Separação</string>
   <string name="tela_inicial">Tela Inicial</string>
   <string name="escaneie">Escaneie o Qrcode</string>
-  <string name="introducao_separacao">Escaneie o QR Code de sua lista para começarmos a busca de seus produtos no Estoque.</string>
-  <string name="storage">Esses são os produtos que estão em nosso estoque, e a sua quantidade em estoque</string>
-  <string name="introducao">Nesse Aplicativo temos o objetivo de facilitar sua listagem de produtos e contagem total deles em estoque.</string>
+  <string name="introducao_separacao">Vá até o QR Code da sua separação, para iniciarmos a busca dos produtos no Estoque.</string>
+  <string name="storage">Esses são os produtos que estão em nosso estoque e a quantidade disponível.</string>
+  <string name="introducao">Realize a separação dos produtos, verifique a quantidade que foram separados e veja a quantidade total dos produtos em estoque.\n\nAperte em `Começar` e inicie a separação</string>
 </resources>

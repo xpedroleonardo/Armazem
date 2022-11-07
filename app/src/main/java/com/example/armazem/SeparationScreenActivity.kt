@@ -121,7 +121,6 @@ class SeparationScreenActivity : AppCompatActivity() {
           runOnUiThread {
             if (scannedValue.contains(":") && flag == 0) {
               flag = 1
-              //Pausa a câmera
               cameraSource.stop()
 
               status.text = "Separação de produtos identificada!!!"
@@ -182,5 +181,15 @@ class SeparationScreenActivity : AppCompatActivity() {
   override fun onDestroy() {
     super.onDestroy()
     cameraSource.stop()
+  }
+
+  override fun onBackPressed() {
+    params.putAll(intent.extras)
+
+    val proximaTela = Intent(this, HomeScreenActivity::class.java)
+    proximaTela.putExtras(params)
+    startActivity(proximaTela)
+
+    finish()
   }
 }

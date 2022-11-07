@@ -26,7 +26,7 @@
     android:fontFamily="@font/inter_medium"
     android:text="@string/boas_vindas"
     android:textColor="@color/black"
-    android:textSize="18sp"
+    android:textSize="19sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintHorizontal_bias="0.498"
@@ -36,19 +36,20 @@
 
   <TextView
     android:id="@+id/introducao"
-    android:layout_width="300dp"
+    android:layout_width="320dp"
     android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:fontFamily="@font/inter_medium"
     android:text="@string/introducao"
     android:textAlignment="center"
-    android:textSize="18sp"
-    android:fontFamily="@font/inter_medium"
     android:textColor="@color/black"
+    android:textSize="18sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.496"
+    app:layout_constraintHorizontal_bias="0.494"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.606" />
+    app:layout_constraintTop_toBottomOf="@+id/boas_vindas"
+    app:layout_constraintVertical_bias="0.058" />
 
   <Button
     android:id="@+id/comecar"

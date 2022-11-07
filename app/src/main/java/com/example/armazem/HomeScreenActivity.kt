@@ -1,9 +1,9 @@
 package com.example.armazem
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 
 class HomeScreenActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,5 +31,9 @@ class HomeScreenActivity : AppCompatActivity() {
       startActivity(proximaTela)
     }
 
+  }
+
+  override fun onBackPressed() {
+    finishAffinity()
   }
 }

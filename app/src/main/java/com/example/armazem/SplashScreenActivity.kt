@@ -29,6 +29,6 @@ class SplashScreenActivity : AppCompatActivity() {
       startActivity(novaTela)
 
       finish()
-    }, 1000)
+    }, 3000)
   }
 }

@@ -13,6 +13,7 @@ import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 
 class StorageScreenActivity : AppCompatActivity() {
+  private val params = Bundle()
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -80,5 +81,15 @@ class StorageScreenActivity : AppCompatActivity() {
       tabela.addView(separador)
       tabela.addView(linha)
     }
+  }
+
+  override fun onBackPressed() {
+    params.putAll(intent.extras)
+
+    val proximaTela = Intent(this, HomeScreenActivity::class.java)
+    proximaTela.putExtras(params)
+    startActivity(proximaTela)
+
+    finish()
   }
 }
