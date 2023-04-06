@@ -1,13 +1,10 @@
-### Armazem | Em desenvolvimento...
 <div align="center">
 
-### Controle de TCC
+### Armazem
+
 <br/>
 
-<img width="150px" src="./app/src/main/res/drawable-v24/" title="Armazem - Logo" alt="Armazem - Logo">
-
-#### Universidade Cidade de São Paulo
-
+<img width="170px" src="./readme/app-icon.svg" title="Armazem - Logo" alt="Armazem - Logo">
 </div>
 
 ## 🎥️ Demostração
@@ -16,13 +13,23 @@
 
 ## 📋️ Introdução
 
-O projeto tem como objetivo disponibilizar recursos para feedback e envio de arquivos de trabalho, possibilitando aos alunos e professores, uma plataforma prática e organizada de envios.
+O aplicativo tem a função de simular, como funcionaria a separação de produtos lendo o QRCODE de cada produto em estoque, com base em uma lista de separação.
+
+Os produtos em estoque, tem um valor total **1000**, e após o fim de cada lista de separação, a quantidade dos produtos são subtraídas do armazem
+
+No fim da separação exibir o resumo dos produtos separados, como: **Quantidade**, **Localização** e **Código de Identificação**.
 
 ## 🧪 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [x] Kotlin
+
+## 🛠 Configuração
+
+Será necessário o **Android Studio** para executar o projeto, caso precise realize o download [Aqui](https://developer.android.com/studio)
+
+E quando for executar em seu Dispositivo Físico (Celular) ou Emulador de celular, selecionar a Versão do Android (O projeto foi Desenvolvido na **versão 32**)
 
 ## 🚀 Como executar
 
@@ -32,27 +39,15 @@ Clone o projeto e entre na pasta
 ➜ git clone https://github.com/xpedroleonardo/Armazem.git
 ```
 
-Após isso você deverá acessar o arquivo <b>src/controle_tcc.sql</b>, nele estão os scripts para criar o banco que dados, para que o projeto funcione corretamente.
+Acesse a pasta do projeto no Android Studio, e execute selecionando:
 
-Após a criação do banco de dados você deverá acessar o arquivo <b>src/Config.php</b>, e altere os campos relacionados ao banco de dados, conforme está configurado na sua máquina.
+- [x] Dispositivo físico (Celular)
 
-```php
+ou
 
-/** BASE URL */
-define("ROOT", "http://localhost/Controle-TCC"); // Url do projeto no seu servidor local.
+- [x] Emulador
 
-/** DATABASE CONNECT */
-define("DATA_LAYER_CONFIG", [
-  "driver" => "mysql", //Drive de Conexão
-  "host" => "localhost", //Host
-  "port" => "3306", //Porta de Conexão
-  "dbname" => "controle_tcc", //Nome do Banco de Dados
-  "username" => "root", //Usuário do Banco de Dados
-  "passwd" => "", //Senha do Banco de Dados
-  ...
-]);
-
-```
+E aguarde o projeto ser contruído.
 
 
 ### 👨‍💻️👩‍💻️ Autores
