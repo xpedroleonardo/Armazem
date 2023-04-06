@@ -4,12 +4,12 @@
 
 <br/>
 
-<img width="170px" src="./readme/app-icon.svg" title="Armazem - Logo" alt="Armazem - Logo">
+<img width="220px" src="./readme/app-icon.svg" title="Armazem - Logo" alt="Armazem - Logo">
 </div>
 
 ## 🎥️ Demostração
 
-
+[![Controle-TCC](./readme/apresentacao.png)](https://youtu.be/7C-z7mqIls4 "Assistir demostração do Trabalho - YouTube")
 
 ## 📋️ Introdução
 
