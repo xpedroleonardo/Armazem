@@ -1,4 +1,10 @@
+<div align="center">
+
 ### Armazem
+
+<p><p>
+<img width="220px" src="./readme/app-icon.svg" title="Armazem - Logo" alt="Armazem - Logo">
+</div>
 
 ## 📋️ Introdução
 
