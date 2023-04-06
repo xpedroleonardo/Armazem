@@ -1,15 +1,4 @@
-<div align="center">
-
 ### Armazem
-
-<br/>
-
-<img width="220px" src="./readme/app-icon.svg" title="Armazem - Logo" alt="Armazem - Logo">
-</div>
-
-## 🎥️ Demostração
-
-[![Controle-TCC](./readme/apresentacao.png)](https://youtu.be/7C-z7mqIls4 "Assistir demostração do Trabalho - YouTube")
 
 ## 📋️ Introdução
 
@@ -18,6 +7,10 @@ O aplicativo tem a função de simular, como funcionaria a separação de produt
 Os produtos em estoque, tem um valor total **1000**, e após o fim de cada lista de separação, a quantidade dos produtos são subtraídas do armazem
 
 No fim da separação exibir o resumo dos produtos separados, como: **Quantidade**, **Localização** e **Código de Identificação**.
+
+## 🎥️ Demostração
+
+[![Controle-TCC](./readme/apresentacao.png)](https://youtu.be/7C-z7mqIls4 "Assistir demostração do Trabalho - YouTube")
 
 ## 🧪 Tecnologias
 
