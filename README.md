@@ -47,7 +47,7 @@ E aguarde o projeto ser contruído.
 ## 🔑 Acesso
 
 Para entrar no aplicativo, será necessário informar os dados dos usuários existentes na aplicação.<br>
-Lista de usuários no arquivo: *Armazem/app/src/main/java/com/example/armazem/* **UsersList.kt**.
+Lista de usuários no arquivo: *Armazem/app/src/main/java/com/example/armazem/*<b>UsersList.kt<b>.
 
 Valores utilizados na demonstração:
 
