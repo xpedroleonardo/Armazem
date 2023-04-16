@@ -40,19 +40,19 @@ Clone o projeto e entre na pasta
 
 Acesse a pasta do projeto no Android Studio, e execute selecionando:
 
-- [x] Dispositivo físico (Celular)
-
-ou
-
-- [x] Emulador
+**Dispositivo físico (Celular)** ou **Emulador**
 
 E aguarde o projeto ser contruído.
 
+## 🔑 Acesso
 
-### 👨‍💻️👩‍💻️ Autores
+Para entrar no aplicativo, será necessário informar os dados dos usuários existentes na aplicação.<br>
+Lista de usuários no arquivo: *Armazem/app/src/main/java/com/example/armazem/* **UsersList.kt**.
 
-| [<img src="https://avatars.githubusercontent.com/u/111441163?v=4" width='62px' title="Camille Ruiz">](https://github.com/camizru) <br> Camille | [<img src="https://avatars.githubusercontent.com/u/83608323?v=4" width='62px' title="Heloisa Romão">](https://github.com/HeloisaRomao) <br> Heloisa | [<img src="https://avatars.githubusercontent.com/u/67611596?v=4" width='62px' title="Keila Sales">](https://github.com/KeilaS06) <br> Keila | [<img src="https://avatars.githubusercontent.com/u/111459788?v=4" width='62px' title="Kethellen Morais">](https://github.com/kethellenmorais)<br> Kethellen | [<img src="https://avatars.githubusercontent.com/u/112582501?v=4" width='62px' title="Luana Santana">](https://github.com/santanaluana)<br> Luana| [<img src="https://avatars.githubusercontent.com/u/112817731?v=4" width='62px' title="Mateus Ferreira">](https://github.com/MafdSantana)<br>Mateus | [<img src="https://avatars.githubusercontent.com/u/50972494?v=4" width='62px' title="Pedro Leonardo">](https://github.com/xpedroleonardo) <br> Pedro |
-| :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+Valores utilizados na demonstração:
+
+Usuário: **Pedro**<br>
+Senha: **12345**
 
 ## 📝 License
 
